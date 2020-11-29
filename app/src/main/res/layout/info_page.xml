@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/info_page"
+    tools:context=".view.InfoPage"
+    android:background="#F4F4F3"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            android:background="@color/yellow_4"
+            >
+
+            <ImageButton
+                android:id="@+id/back_image_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:background="@color/yellow_4"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/info_page_text_head"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="90dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Информация"
+                android:textColor="#CE000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/borrower_requirements_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/borrower_requirements"
+                    android:textAlignment="center"
+                    android:textColor="@color/pink_3"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <CheckedTextView
+                    android:id="@+id/borrower_requirements_checked_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/borrower_requirements_text"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/conditions_for_obtaining_a_loan"
+                    android:textAlignment="center"
+                    android:textColor="@color/pink_3"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/conditions_for_obtaining_a_loan_text"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/loan_calculation_example_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/loan_calculation_example"
+                    android:textAlignment="center"
+                    android:textColor="@color/pink_3"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <CheckedTextView
+                    android:id="@+id/loan_calculation_example_text_checked_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/loan_calculation_example_text"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/prolongation_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/prolongation"
+                    android:textAlignment="center"
+                    android:textColor="@color/pink_3"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <CheckedTextView
+                    android:id="@+id/prolongation_text_checked_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/prolongation_text"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/consequences_of_non_payment_of_a_loan_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/consequences_of_non_payment_of_a_loan"
+                    android:textAlignment="center"
+                    android:textColor="@color/pink_3"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <CheckedTextView
+                    android:id="@+id/consequences_of_non_payment_of_a_loan_checked_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/consequences_of_non_payment_of_a_loan_text"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fastloan">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FastLoan">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.InfoPage"
+            android:label="InfoPage"
+            >
+            <!-- вставляем сюда этот модуль -->
+            <intent-filter>
+                <!-- меняем на адрес новой страницы -->
+                <action android:name=".InfoPage" />
+                <!-- меняем на DEFAULT -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.InfoCreditPage"
+            android:label="InfoCreditPage"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <!-- вставляем сюда этот модуль -->
+            <intent-filter>
+                <!-- меняем на адрес новой страницы -->
+                <action android:name=".InfoCreditPage" />
+                <!-- меняем на DEFAULT -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

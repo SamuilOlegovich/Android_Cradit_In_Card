@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Деньги на карту</string>
+    <string name="contacts">КОНТАКТЫ</string>
+    <string name="license">ЛИЦЕНЗИЯ</string>
+    <string name="time">СРОК</string>
+    <string name="annual_percentage_rate">ГОДОВАЯ ПРОЦЕНТНАЯ СТАВКА</string>
+    <string name="terms_of_use">Условия пользования</string>
+
+    <string name="borrower_requirements">Требования к заемщикам</string>
+    <string name="borrower_requirements_text"><br />
+        Паспорт гражданина Украины<br />
+        ИНН<br />Возраст: старше 18 лет<br />
+        Карта любого банка Украины<br /></string>
+
+    <string name="conditions_for_obtaining_a_loan">Условия получения займа</string>
+    <string name="conditions_for_obtaining_a_loan_text"><br />
+        Минимальный срок кредитования: 61 дней<br />
+        Максимальный срок кредитования: 365 день<br />
+        Минимальная ставка за пользование кредитом: 0.1% в день<br />
+        Максимальная ставка за пользование кредитом: 1% в день<br />
+        Максимальная годовая процентная ставка (APR): 365%<br />
+        Штраф за просрочку: 0.10% в день<br />
+        Другие комиссии или сборы: отсутствуют<br /></string>
+
+    <string name="loan_calculation_example">Пример расчета займа</string>
+    <string name="loan_calculation_example_text"><br />
+        Сумма и срок займа: 12000 гривен на 149 дней<br />
+        Комиссия за пользование кредитом: 1% в день (120 гривен/день)<br />
+        Общая сумма комиссии: 17880 гривен<br />
+        Общая сумма к возврату с учетом суммы займа: 29880 гривен<br />
+        ПСК (полная стоимость кредита) в процентах составляет 149% годовых<br /></string>
+
+    <string name="prolongation">Пролонгация</string>
+    <string name="prolongation_text"><br />
+        Заемщик имеет право на продление срока оплаты по кредиту.<br />
+        При этом необходимо оплатить только проценты за пользование\nсредствами.<br /></string>
+
+    <string name="consequences_of_non_payment_of_a_loan">Последствия невыплаты займа</string>
+    <string name="consequences_of_non_payment_of_a_loan_text"><br />
+        В случае нарушения сроков выплаты онлайн займа, размер неустойки может составить 0,10% от общей суммы просрочки в день, но не более 10% от суммы всего кредита.<br /></string>
+</resources>
