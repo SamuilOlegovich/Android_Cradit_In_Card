@@ -4,23 +4,22 @@
     <string name="license">ЛИЦЕНЗИЯ</string>
     <string name="time">СРОК</string>
     <string name="annual_percentage_rate">ГОДОВАЯ ПРОЦЕНТНАЯ СТАВКА</string>
-    <string name="terms_of_use">Условия пользования</string>
+    <string name="terms_of_use">Условия пользования<br /></string>
 
     <string name="borrower_requirements">Требования к заемщикам</string>
-    <string name="borrower_requirements_text"><br />
-        Паспорт гражданина Украины<br />
-        ИНН<br />Возраст: старше 18 лет<br />
-        Карта любого банка Украины<br /></string>
+    <string name="borrower_requirements_text1"> • Паспорт гражданина Украины</string>
+    <string name="borrower_requirements_text2"> • ИНН</string>
+    <string name="borrower_requirements_text3"> • Возраст: старше 18 лет</string>
+    <string name="borrower_requirements_text4"> • Карта любого банка Украины</string>
 
-    <string name="conditions_for_obtaining_a_loan">Условия получения займа</string>
-    <string name="conditions_for_obtaining_a_loan_text"><br />
-        Минимальный срок кредитования: 61 дней<br />
-        Максимальный срок кредитования: 365 день<br />
-        Минимальная ставка за пользование кредитом: 0.1% в день<br />
-        Максимальная ставка за пользование кредитом: 1% в день<br />
-        Максимальная годовая процентная ставка (APR): 365%<br />
-        Штраф за просрочку: 0.10% в день<br />
-        Другие комиссии или сборы: отсутствуют<br /></string>
+    <string name="conditions_for_obtaining_a_loan"> • Условия получения займа</string>
+    <string name="conditions_for_obtaining_a_loan_text1"> • Минимальный срок кредитования: 61 дней</string>
+    <string name="conditions_for_obtaining_a_loan_text2"> • Максимальный срок кредитования: 365 день</string>
+    <string name="conditions_for_obtaining_a_loan_text3"> • Минимальная ставка за пользование кредитом: 0.1% в день</string>
+    <string name="conditions_for_obtaining_a_loan_text4"> • Максимальная ставка за пользование кредитом: 1% в день</string>
+    <string name="conditions_for_obtaining_a_loan_text5"> • Максимальная годовая процентная ставка (APR): 365%</string>
+    <string name="conditions_for_obtaining_a_loan_text6"> • Штраф за просрочку: 0.10% в день</string>
+    <string name="conditions_for_obtaining_a_loan_text7"> • Другие комиссии или сборы: отсутствуют</string>
 
     <string name="loan_calculation_example">Пример расчета займа</string>
     <string name="loan_calculation_example_text"><br />

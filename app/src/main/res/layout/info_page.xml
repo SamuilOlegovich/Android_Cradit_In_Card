@@ -55,13 +55,25 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             >
 
             <LinearLayout
+                android:background="@drawable/info_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 >
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="382dp"
+                    android:layout_height="95dp"
+                    app:srcCompat="@drawable/circle_customer_help_info_information_service_support_icon_123208" />
 
                 <TextView
                     android:id="@+id/borrower_requirements_text_view"
@@ -72,17 +84,79 @@
                     android:text="@string/borrower_requirements"
                     android:textAlignment="center"
                     android:textColor="@color/pink_3"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
                 <CheckedTextView
-                    android:id="@+id/borrower_requirements_checked_text_view"
+                    android:id="@+id/borrower_requirements_checked_text_view0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/borrower_requirements_text"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+
+                <CheckedTextView
+                    android:id="@+id/borrower_requirements_checked_text_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/borrower_requirements_text1"
+                    android:textColor="@color/green_3"
+                    android:textAlignment="textStart"
+                    android:textSize="12sp" />
+
+
+                <CheckedTextView
+                    android:id="@+id/borrower_requirements_checked_text_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/borrower_requirements_text2"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/borrower_requirements_checked_text_view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/borrower_requirements_text3"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/borrower_requirements_checked_text_view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/borrower_requirements_text4"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/borrower_requirements_checked_text_view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/montserrat"
                     android:textAlignment="textStart"
                     android:textColor="@color/green_3"
                     android:textSize="12sp" />
@@ -93,19 +167,115 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/conditions_for_obtaining_a_loan"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:textAlignment="center"
                     android:textColor="@color/pink_3"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
                 <CheckedTextView
-                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view"
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/conditions_for_obtaining_a_loan_text"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/conditions_for_obtaining_a_loan_text1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/conditions_for_obtaining_a_loan_text2"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/conditions_for_obtaining_a_loan_text3"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/conditions_for_obtaining_a_loan_text4"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/conditions_for_obtaining_a_loan_text5"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/conditions_for_obtaining_a_loan_text6"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/conditions_for_obtaining_a_loan_text7"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/green_3"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/conditions_for_obtaining_a_loan_checked_text_view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/montserrat"
                     android:textAlignment="textStart"
                     android:textColor="@color/green_3"
                     android:textSize="12sp" />
@@ -116,6 +286,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/loan_calculation_example"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:textAlignment="center"
                     android:textColor="@color/pink_3"
                     android:textSize="17sp"
@@ -141,6 +313,8 @@
                     android:text="@string/prolongation"
                     android:textAlignment="center"
                     android:textColor="@color/pink_3"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
@@ -162,6 +336,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/consequences_of_non_payment_of_a_loan"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:textAlignment="center"
                     android:textColor="@color/pink_3"
                     android:textSize="17sp"

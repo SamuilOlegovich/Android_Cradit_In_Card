@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.fastloan.MainActivity;
 import com.fastloan.R;
-import com.fastloan.model.CreditOrganization;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,8 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
     }
 
 
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         //get the property we are displaying
@@ -37,14 +41,24 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.table, null);
 
-        TextView oneCredit = (TextView) view.findViewById(R.id.one_credit);
+//        TextView oneCredit = (TextView) view.findViewById(R.id.one_credit);
         TextView repeatedCredit = (TextView) view.findViewById(R.id.repeated_credit_data);
         TextView oneCreditData = (TextView) view.findViewById(R.id.one_credit_data);
-        TextView repeatedCreditData = (TextView) view.findViewById(R.id.repeated_credit_data);
-        TextView creditZeroPercent = (TextView) view.findViewById(R.id.creditZeroPercent);
+//        TextView repeatedCreditData = (TextView) view.findViewById(R.id.repeated_credit_data);
+//        TextView creditZeroPercent = (TextView) view.findViewById(R.id.creditZeroPercent);
         TextView term = (TextView) view.findViewById(R.id.term_data);
         TextView rate = (TextView) view.findViewById(R.id.rate_data);
         ImageView image = (ImageView) view.findViewById(R.id.image_logo);
+//        Button button = (Button) view.findViewById(R.id.button_table);
+        View buttonView = view.findViewById(R.id.button_table);
+
+        buttonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // класс для перехода на другую страницу
+                DataExchange.getMainActivity().showInfoThisTable(position);
+            }
+        });
 
 
         //set address and description
