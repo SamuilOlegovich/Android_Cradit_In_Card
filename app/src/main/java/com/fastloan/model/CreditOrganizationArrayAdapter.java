@@ -2,6 +2,9 @@ package com.fastloan.model;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.NetworkOnMainThreadException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,9 @@ import android.widget.Toast;
 import com.fastloan.MainActivity;
 import com.fastloan.R;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,8 +55,11 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
         TextView term = (TextView) view.findViewById(R.id.term_data);
         TextView rate = (TextView) view.findViewById(R.id.rate_data);
         ImageView image = (ImageView) view.findViewById(R.id.image_logo);
-//        Button button = (Button) view.findViewById(R.id.button_table);
+        Button button = (Button) view.findViewById(R.id.button_table);
         View buttonView = view.findViewById(R.id.button_table);
+        if (DataExchange.getCountryCode() != 255) {
+            button.setText("ПОДРОБНЕЕ");
+        }
 
         buttonView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,8 +74,8 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
         oneCreditData.setText(creditOrganization.getAmountFrom() + " грн");
         repeatedCredit.setText(creditOrganization.getAmountTo() + " грн");
         term.setText(creditOrganization.getTermFrom() + " - " + creditOrganization.getTermTo() + " дней");
-        rate.setText(creditOrganization.getApr() + " в день");
-
+        rate.setText(((Integer.parseInt(creditOrganization.getApr().replaceAll("%", ""))
+                * 100) / 365) / 100.0 + "% в день");
 
 
         //display trimmed excerpt for description
@@ -78,10 +87,27 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
 //            description.setText(creditOrganizationList.getDescription());
 //        }
 
+//        URL imagesURL = null;
+//        Bitmap mIcon = null;
+//        try {
+//            imagesURL = new URL(creditOrganization.getImg());
+//            mIcon = BitmapFactory.decodeStream(imagesURL.openConnection().getInputStream());
+//            image.setImageBitmap(mIcon);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        } catch (NetworkOnMainThreadException e) {
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        new DownloadImageTask(image).execute(creditOrganization.getImg());
+
+
 
         //get the image associated with this property
-        int imageID = context.getResources().getIdentifier("logo_credit7", "drawable", context.getPackageName());
-        image.setImageResource(imageID);
+//        int imageID = context.getResources().getIdentifier("logo_credit7", "drawable", context.getPackageName());
+//        image.setImageResource(imageID);
 
         return view;
     }
