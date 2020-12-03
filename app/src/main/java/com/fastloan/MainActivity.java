@@ -21,8 +21,7 @@ import com.fastloan.model.DataExchange;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
-
-
+import java.util.Collections;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -152,6 +151,18 @@ public class MainActivity extends AppCompatActivity {
         ObjectCreator objectCreator = new ObjectCreator();
         creditOrganizationArrayList
                 = new ArrayList<>(objectCreator.createObjects(DataExchange.getString()));
+        ArrayList<CreditOrganization> top = new ArrayList<>();
+        ArrayList<Integer> integers = new ArrayList<>();
+        for (CreditOrganization creditOrganization : creditOrganizationArrayList) {
+            if (creditOrganization.getTop().equals("true")) {
+                top.add(creditOrganization);
+                integers.add(creditOrganizationArrayList.indexOf(creditOrganization));
+            }
+        }
+        Collections.reverse(integers);
+        for (Integer integer : integers) {
+            creditOrganizationArrayList.remove(integer);
+        }
 
         creditOrganizationArrayList1 = new ArrayList<>();
         creditOrganizationArrayList2 = new ArrayList<>();
@@ -159,13 +170,24 @@ public class MainActivity extends AppCompatActivity {
         creditOrganizationArrayList4 = new ArrayList<>();
 //        creditOrganizationArrayList5 = new ArrayList<>();
 
-//        creditOrganizationArrayList.add(new CreditOrganization());
-//        creditOrganizationArrayList.add(new CreditOrganization());
-//        creditOrganizationArrayList.add(new CreditOrganization());
-//        creditOrganizationArrayList.add(new CreditOrganization());
-//        creditOrganizationArrayList.add(new CreditOrganization());
-//        creditOrganizationArrayList.add(new CreditOrganization());
-
+        for (CreditOrganization creditOrganization : top) {
+            if (creditOrganization.getAll().equalsIgnoreCase("true")) {
+                creditOrganizationArrayList1.add(creditOrganization);
+            }
+            if (creditOrganization.getZero().equalsIgnoreCase("true")) {
+                creditOrganizationArrayList2.add(creditOrganization);
+            }
+            if (creditOrganization.getBadCreditHistory().equalsIgnoreCase("true")) {
+                creditOrganizationArrayList3.add(creditOrganization);
+            }
+            if (creditOrganization.getNoCalls().equalsIgnoreCase("true")) {
+                creditOrganizationArrayList4.add(creditOrganization);
+            }
+//            if (creditOrganization.getAllCredits().equalsIgnoreCase("true")) {
+//                creditOrganizationArrayList5.add(creditOrganization);
+//            }
+        }
+        
         for (CreditOrganization creditOrganization : creditOrganizationArrayList) {
             if (creditOrganization.getAll().equalsIgnoreCase("true")) {
                 creditOrganizationArrayList1.add(creditOrganization);
@@ -184,6 +206,8 @@ public class MainActivity extends AppCompatActivity {
 //            }
         }
         creditOrganizationArrayList.clear();
+        integers.clear();
+        top.clear();
         list = 1;
     }
 
@@ -228,11 +252,12 @@ public class MainActivity extends AppCompatActivity {
 //        else if (list == 5) {
 //            DataExchange.setCreditOrganization(creditOrganizationArrayList5.get(index));
 //        }
+
         if (DataExchange.getCountryCode() != 255) {
-            Intent intent = new Intent(".InfoPage");
+            Intent intent = new Intent(".InfoCreditPage");
             startActivity(intent);
         } else {
-            Intent intent = new Intent(".InfoCreditPage");
+            Intent intent = new Intent(".WebPage");
             startActivity(intent);
         }
     }

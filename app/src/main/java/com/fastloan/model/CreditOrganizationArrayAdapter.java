@@ -57,7 +57,18 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
         ImageView image = (ImageView) view.findViewById(R.id.image_logo);
         Button button = (Button) view.findViewById(R.id.button_table);
         View buttonView = view.findViewById(R.id.button_table);
+
+        //set address and description
+        oneCreditData.setText(creditOrganization.getAmountFrom() + " грн");
+        repeatedCredit.setText(creditOrganization.getAmountTo() + " грн");
+        term.setText(creditOrganization.getTermFrom() + " - " + creditOrganization.getTermTo() + " дней");
+        rate.setText(((Integer.parseInt(creditOrganization.getApr().replaceAll("%", ""))
+                * 100) / 365) / 100.0 + "% в день");
+
+        new DownloadImageTask(image).execute(creditOrganization.getImg());
+
         if (DataExchange.getCountryCode() != 255) {
+            term.setText("61 - 365 дней");
             button.setText("ПОДРОБНЕЕ");
         }
 
@@ -70,12 +81,7 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
         });
 
 
-        //set address and description
-        oneCreditData.setText(creditOrganization.getAmountFrom() + " грн");
-        repeatedCredit.setText(creditOrganization.getAmountTo() + " грн");
-        term.setText(creditOrganization.getTermFrom() + " - " + creditOrganization.getTermTo() + " дней");
-        rate.setText(((Integer.parseInt(creditOrganization.getApr().replaceAll("%", ""))
-                * 100) / 365) / 100.0 + "% в день");
+
 
 
         //display trimmed excerpt for description
@@ -101,7 +107,7 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
 //            e.printStackTrace();
 //        }
 
-        new DownloadImageTask(image).execute(creditOrganization.getImg());
+
 
 
 
