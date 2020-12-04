@@ -47,11 +47,8 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.table, null);
 
-//        TextView oneCredit = (TextView) view.findViewById(R.id.one_credit);
         TextView repeatedCredit = (TextView) view.findViewById(R.id.repeated_credit_data);
         TextView oneCreditData = (TextView) view.findViewById(R.id.one_credit_data);
-//        TextView repeatedCreditData = (TextView) view.findViewById(R.id.repeated_credit_data);
-//        TextView creditZeroPercent = (TextView) view.findViewById(R.id.creditZeroPercent);
         TextView term = (TextView) view.findViewById(R.id.term_data);
         TextView rate = (TextView) view.findViewById(R.id.rate_data);
         ImageView image = (ImageView) view.findViewById(R.id.image_logo);
@@ -67,7 +64,7 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
 
         new DownloadImageTask(image).execute(creditOrganization.getImg());
 
-        if (DataExchange.getCountryCode() != 255) {
+        if (DataExchange.getCountryCode() != 255 || !DataExchange.getNetworkCountry().equals("ua")) {
             term.setText("61 - 365 дней");
             button.setText("ПОДРОБНЕЕ");
         }
@@ -79,41 +76,6 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
                 DataExchange.getMainActivity().showInfoThisTable(position);
             }
         });
-
-
-
-
-
-        //display trimmed excerpt for description
-//        int descriptionLength = creditOrganizationList.getDescription().length();
-//        if(descriptionLength >= 100){
-//            String descriptionTrim = creditOrganizationList.getDescription().substring(0, 100) + "...";
-//            description.setText(descriptionTrim);
-//        }else{
-//            description.setText(creditOrganizationList.getDescription());
-//        }
-
-//        URL imagesURL = null;
-//        Bitmap mIcon = null;
-//        try {
-//            imagesURL = new URL(creditOrganization.getImg());
-//            mIcon = BitmapFactory.decodeStream(imagesURL.openConnection().getInputStream());
-//            image.setImageBitmap(mIcon);
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        } catch (NetworkOnMainThreadException e) {
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-
-
-
-
-        //get the image associated with this property
-//        int imageID = context.getResources().getIdentifier("logo_credit7", "drawable", context.getPackageName());
-//        image.setImageResource(imageID);
 
         return view;
     }

@@ -5,64 +5,63 @@ package com.fastloan.model;
 
 public class CreditOrganization {
     private String percentFrom;
-    private String percentTo;
     private String amountFrom;
+    private String percentTo;
     private String amountTo;
     private String termFrom;
     private String termTo;
-
     // detail
-    private String site = "https://moneyman.ru/";
-    private String phone = "+7 (495) 744-78-78";
-    private String email = "support@moneyman.ru";
-    private String address = "г. Москва, ул. Василисы Кожиной, д.1, офис Д13";
-    private String license = "№ 2110177000478";
-    private String apr = "24%";
+    private String address;
+    private String license;
+    private String phone;
+    private String email;
+    private String site;
+    private String apr;
 
-    private String id = "5fb2e270b8f4ea3006c364be";
-    private String offer_name = "MoneyMan";
-    private String offer_id = "5024";
-    private String top = "true";
-    private String img = "https://all-credits.com.ua/offers/moneyman.png";
-    private String url = "https://go.leadgid.ru/aff_c?offer_id=5024&aff_id=64832";
-    private String cpa = "leadgid";
+    private String offer_name;
+    private String offer_id;
+    private String top;
+    private String img;
+    private String url;
+    private String cpa;
+    private String id;
     // categories
-    private String all = "true";
-    private String zero = "true";
-    private String badCreditHistory = "false";
-    private String allCredits = "true";
-    private String noCalls = "true";
+    private String badCreditHistory;
+    private String allCredits;
+    private String noCalls;
+    private String zero;
+    private String all;
 
 
 
     public CreditOrganization() {
         this.percentFrom = "0.01";
-        this.percentTo = "0.05";
         this.amountFrom = "3000";
+        this.percentTo = "0.05";
         this.amountTo = "7000";
         this.termFrom = "6";
         this.termTo = "9";
         // detail
-        this.site = "https://moneyman.ru/";
-        this.phone = "+7 (495) 744-78-78";
-        this.email = "support@moneyman.ru";
         this.address = "г. Москва, ул. Василисы Кожиной, д.1, офис Д13";
+        this.site = "https://moneyman.ru/";
+        this.email = "support@moneyman.ru";
+        this.phone = "+7 (495) 744-78-78";
         this.license = "№ 2110177000478";
         this.apr = "24%";
-
+        //
+        this.url = "https://go.leadgid.ru/aff_c?offer_id=5024&aff_id=64832";
+        this.img = "https://all-credits.com.ua/offers/moneyman.png";
         this.id = "5fb2e270b8f4ea3006c364be";
         this.offer_name = "MoneyMan";
         this.offer_id = "5024";
-        this.top = "true";
-        this.img = "https://all-credits.com.ua/offers/moneyman.png";
-        this.url = "https://go.leadgid.ru/aff_c?offer_id=5024&aff_id=64832";
         this.cpa = "leadgid";
+        this.top = "true";
         // categories
-        this.all = "true";
-        this.zero = "true";
         this.badCreditHistory = "false";
         this.allCredits = "true";
         this.noCalls = "true";
+        this.zero = "true";
+        this.all = "true";
     }
 
 

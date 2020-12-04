@@ -30,16 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<CreditOrganization> creditOrganizationArrayList3;
     private ArrayList<CreditOrganization> creditOrganizationArrayList4;
     private ArrayList<CreditOrganization> creditOrganizationArrayList;
-//    private ArrayList<CreditOrganization> creditOrganizationArrayList5;
     private ImageButton infoImageButton;
-//    private TabItem allCreditsButton;
     private TabItem badCreditButton;
     private TabItem noCallsButton;
     private String networkCountry;
     private TabLayout tabLayout;
     private TabItem zeroButton;
-    private TabItem allButton;
     private ListView listView;
+    private TabItem allButton;
     private int countryCode;
     private int list;
 
@@ -58,15 +56,11 @@ public class MainActivity extends AppCompatActivity {
         setStartList();
         listeners();
 
-
-
-
-
-        Toast.makeText(
-                MainActivity.this,
-                "networkCountry: " + networkCountry + ", countryCode: " + countryCode,
-                Toast.LENGTH_LONG
-        ).show();
+//        Toast.makeText(
+//                MainActivity.this,
+//                "networkCountry: " + networkCountry + ", countryCode: " + countryCode,
+//                Toast.LENGTH_LONG
+//        ).show();
     }
 
 
@@ -128,12 +122,9 @@ public class MainActivity extends AppCompatActivity {
                 selectTabButton(creditOrganizationArrayList4);
                 list = 4;
                 break;
-//            case 4 :
-//                selectTabButton(creditOrganizationArrayList5);
-//                list = 5;
-//                break;
         }
     }
+
 
     private void setButtons() {
         infoImageButton = (ImageButton) findViewById(R.id.info_button_head);
@@ -141,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
         noCallsButton = (TabItem) findViewById(R.id.no_calls_button);
         listView = (ListView) findViewById(R.id.list_of_company_tab);
         zeroButton = (TabItem) findViewById(R.id.creditZeroPercent);
-//        allCreditsButton = (TabItem) findViewById(R.id.allCredits);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         allButton = (TabItem) findViewById(R.id.all);
     }
@@ -168,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
         creditOrganizationArrayList2 = new ArrayList<>();
         creditOrganizationArrayList3 = new ArrayList<>();
         creditOrganizationArrayList4 = new ArrayList<>();
-//        creditOrganizationArrayList5 = new ArrayList<>();
 
         for (CreditOrganization creditOrganization : top) {
             if (creditOrganization.getAll().equalsIgnoreCase("true")) {
@@ -183,9 +172,6 @@ public class MainActivity extends AppCompatActivity {
             if (creditOrganization.getNoCalls().equalsIgnoreCase("true")) {
                 creditOrganizationArrayList4.add(creditOrganization);
             }
-//            if (creditOrganization.getAllCredits().equalsIgnoreCase("true")) {
-//                creditOrganizationArrayList5.add(creditOrganization);
-//            }
         }
         
         for (CreditOrganization creditOrganization : creditOrganizationArrayList) {
@@ -201,9 +187,6 @@ public class MainActivity extends AppCompatActivity {
             if (creditOrganization.getNoCalls().equalsIgnoreCase("true")) {
                 creditOrganizationArrayList4.add(creditOrganization);
             }
-//            if (creditOrganization.getAllCredits().equalsIgnoreCase("true")) {
-//                creditOrganizationArrayList5.add(creditOrganization);
-//            }
         }
         creditOrganizationArrayList.clear();
         integers.clear();
@@ -224,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         Configuration config = getResources().getConfiguration();
         countryCode = config.mcc;
         DataExchange.setCountryCode(countryCode);
-        DataExchange.setCountryCode(255);
+//        DataExchange.setCountryCode(255);
     }
 
 
@@ -249,11 +232,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (list == 4) {
             DataExchange.setCreditOrganization(creditOrganizationArrayList4.get(index));
         }
-//        else if (list == 5) {
-//            DataExchange.setCreditOrganization(creditOrganizationArrayList5.get(index));
-//        }
 
-        if (DataExchange.getCountryCode() != 255) {
+        if (DataExchange.getCountryCode() != 255 || !DataExchange.getNetworkCountry().equals("ua")) {
             Intent intent = new Intent(".InfoCreditPage");
             startActivity(intent);
         } else {
