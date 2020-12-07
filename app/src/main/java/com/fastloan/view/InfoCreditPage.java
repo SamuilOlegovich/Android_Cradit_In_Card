@@ -50,7 +50,6 @@ public class InfoCreditPage extends AppCompatActivity {
 
         new DownloadImageTask(imageCreditInfo).execute(DataExchange.getCreditOrganization().getImg());
 
-
         imageButtonBack.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

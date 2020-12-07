@@ -35,10 +35,10 @@ public class WebPage  extends AppCompatActivity {
     // при нажатии на кнопку назад будем возвращаться назад
     @Override
     public void onBackPressed() {
-//        if (webView.canGoBack()) {
-//            webView.goBack();
-//        } else {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
             super.onBackPressed();
-//        }
+        }
     }
 }
