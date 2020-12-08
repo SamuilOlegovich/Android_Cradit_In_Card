@@ -9,17 +9,21 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 import android.os.Bundle;
 import android.view.View;
 
 import com.fastloan.model.CreditOrganizationArrayAdapter;
+import com.fastloan.model.DownloadStringDataApi;
 import com.fastloan.model.ObjectCreator;
 import com.google.android.material.tabs.TabItem;
 import com.fastloan.model.CreditOrganization;
 import com.fastloan.model.DataExchange;
 import com.google.android.material.tabs.TabLayout;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -64,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
+    private void getStringDataApi() {
+        Thread thread = new DownloadStringDataApi();
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
@@ -138,11 +153,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void createObjects() {
+        getStringDataApi();
         ObjectCreator objectCreator = new ObjectCreator();
-        creditOrganizationArrayList
-                = new ArrayList<>(objectCreator.createObjects(DataExchange.getString()));
+//        creditOrganizationArrayList = new ArrayList<>(new ObjectCreator().createObjects(DataExchange.getStringDataApi()));
+        creditOrganizationArrayList = new ArrayList<>(objectCreator.createObjects(DataExchange.getStringDataApi()));
         ArrayList<CreditOrganization> top = new ArrayList<>();
         ArrayList<Integer> integers = new ArrayList<>();
+
         for (CreditOrganization creditOrganization : creditOrganizationArrayList) {
             if (creditOrganization.getTop().equals("true")) {
                 top.add(creditOrganization);

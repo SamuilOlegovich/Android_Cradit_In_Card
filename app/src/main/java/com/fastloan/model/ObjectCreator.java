@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class ObjectCreator {
 
     public ArrayList<CreditOrganization> createObjects(String inString) {
+        System.out.println(inString);
         ArrayList<CreditOrganization> arrayList = new ArrayList<>();
         String[] strings = inString.split(",\\\"list\":");
         String[] objectsArr = strings[1].split("\\},\\{");
