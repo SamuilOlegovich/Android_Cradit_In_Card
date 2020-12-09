@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class ObjectCreator {
 
     public ArrayList<CreditOrganization> createObjects(String inString) {
-        System.out.println(inString);
         ArrayList<CreditOrganization> arrayList = new ArrayList<>();
         String[] strings = inString.split(",\\\"list\":");
         String[] objectsArr = strings[1].split("\\},\\{");
@@ -67,15 +66,35 @@ public class ObjectCreator {
         // "phone":"+7 (495) 744-78-78",
         // "email":"support@moneyman.ru",
         // "address":"г. Москва, ул. Василисы Кожиной, д.1, офис Д13",
-        // "license":"№ 2110177000478", "apr":"24%"},
+        // "license":"№ 2110177000478",
+        // "apr":"24%"},
         String[] strings = in.replaceAll("\\{", "").split("\",\"");
-        creditOrganization.setSite(strings[0].replaceAll("\"", "").split("site:")[1]);
-        creditOrganization.setPhone(strings[1].replaceAll("\"", "").split(":")[1]);
-        creditOrganization.setEmail(strings[2].replaceAll("\"", "").split(":")[1]);
-        creditOrganization.setAddress(strings[3].replaceAll("\"", "").split(":")[1]);
-        creditOrganization.setLicense(strings[4].replaceAll("\"", "").split(":")[1]);
-        creditOrganization.setApr(strings[5].replaceAll("\"", "")
-                .replaceAll("\\}", "").split(":")[1]);
+//        creditOrganization.setSite(strings[0].replaceAll("\"", "").split("site:")[1]);
+//        creditOrganization.setPhone(strings[1].replaceAll("\"", "").split(":")[1]);
+//
+//        creditOrganization.setEmail(strings[2].replaceAll("\"", "").split(":")[1]);
+//        creditOrganization.setAddress(strings[3].replaceAll("\"", "").split(":")[1]);
+//        creditOrganization.setLicense(strings[4].replaceAll("\"", "").split(":")[1]);
+//        creditOrganization.setApr(strings[5].replaceAll("\"", "")
+//                .replaceAll("\\}", "").split(":")[1]);
+
+        for (int i = 0; i < strings.length; i++) {
+            String s = strings[i].substring(1);
+            if (s.startsWith("detail")) {
+                creditOrganization.setSite(s.replaceAll("\"", "").split("site:")[1]);
+            } else if (s.startsWith("phone")) {
+                creditOrganization.setPhone(s.replaceAll("\"","").split(":")[1]);
+            } else if (s.startsWith("email")) {
+                creditOrganization.setEmail(s.replaceAll("\"","").split(":")[1]);
+            } else if (s.startsWith("address")) {
+                creditOrganization.setAddress(s.replaceAll("\"","").split(":")[1]);
+            } else if (s.startsWith("license")) {
+                creditOrganization.setLicense(s.replaceAll("\"","").split(":")[1]);
+            } else if (s.startsWith("apr")) {
+                creditOrganization.setApr(s.replaceAll("\"","")
+                        .replaceAll("\\}", "").split(":")[1]);
+            }
+        }
     }
 
 
