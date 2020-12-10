@@ -2,9 +2,6 @@ package com.fastloan.model;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.NetworkOnMainThreadException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.fastloan.MainActivity;
 import com.fastloan.R;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,17 +48,17 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
         View buttonView = view.findViewById(R.id.button_table);
 
         //set address and description
-        oneCreditData.setText(creditOrganization.getAmountFrom() + " грн");
-        repeatedCredit.setText(creditOrganization.getAmountTo() + " грн");
-        term.setText(creditOrganization.getTermFrom() + " - " + creditOrganization.getTermTo() + " дней");
+        oneCreditData.setText(creditOrganization.getAmountFrom() + DataExchange.getGRN());
+        repeatedCredit.setText(creditOrganization.getAmountTo() + DataExchange.getGRN());
+        term.setText(creditOrganization.getTermFrom() + " - " + creditOrganization.getTermTo() + DataExchange.getDAY());
         rate.setText(((Integer.parseInt(creditOrganization.getApr().replaceAll("%", ""))
-                * 100) / 365) / 100.0 + "% в день");
+                * 100) / 365) / 100.0 + DataExchange.getPERCENT_IN_DAY());
 
         new DownloadImageTask(image).execute(creditOrganization.getImg());
 
         if (DataExchange.getCountryCode() != 255 || !DataExchange.getNetworkCountry().equals("ua")) {
-            term.setText("61 - 365 дней");
-            button.setText("ПОДРОБНЕЕ");
+            term.setText(DataExchange.getTERM());
+            button.setText(DataExchange.getREAD_MORE());
         }
 
         buttonView.setOnClickListener(new View.OnClickListener() {

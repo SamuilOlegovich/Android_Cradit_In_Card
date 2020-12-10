@@ -11,9 +11,32 @@ public class DataExchange {
     private static String networkCountry;
     private static int countryCode;
 
+    private static final String PERCENT_IN_DAY = "% в день";
+    private static final String READ_MORE = "ПОДРОБНЕЕ";
+    private static final String TERM = "61 - 365 дней";
+    private static final String DAY = "  дней";
+    private static final String GRN = " грн";
 
 
+    public static String getPERCENT_IN_DAY() {
+        return PERCENT_IN_DAY;
+    }
 
+    public static String getREAD_MORE() {
+        return READ_MORE;
+    }
+
+    public static String getTERM() {
+        return TERM;
+    }
+
+    public static String getDAY() {
+        return DAY;
+    }
+
+    public static String getGRN() {
+        return GRN;
+    }
 
     public static String getUrlApi() {
         return urlApi;
