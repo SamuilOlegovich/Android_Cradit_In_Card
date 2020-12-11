@@ -65,6 +65,7 @@ public class CreditOrganizationArrayAdapter extends ArrayAdapter<CreditOrganizat
             @Override
             public void onClick(View v) {
                 // класс для перехода на другую страницу
+
                 DataExchange.getMainActivity().showInfoThisTable(position);
             }
         });

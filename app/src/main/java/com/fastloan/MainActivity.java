@@ -71,10 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getStringDataApi() {
-        Thread thread = new DownloadStringDataApi();
+        Thread thread = new Thread(new DownloadStringDataApi());
         thread.start();
-        try {
-            thread.join();
+        try { thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

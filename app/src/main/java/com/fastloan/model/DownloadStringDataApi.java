@@ -8,7 +8,7 @@ import java.net.URL;
 
 
 
-public class DownloadStringDataApi extends Thread {
+public class DownloadStringDataApi implements Runnable {
 
     @Override
     public void run() {
@@ -22,9 +22,7 @@ public class DownloadStringDataApi extends Thread {
             StringBuffer response = new StringBuffer();
             String inputLine;
 
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
+            while ((inputLine = in.readLine()) != null) { response.append(inputLine); }
 
             if (response != null && in != null && response.length() > 100) {
                 DataExchange.setStringDataApi(response.toString());
