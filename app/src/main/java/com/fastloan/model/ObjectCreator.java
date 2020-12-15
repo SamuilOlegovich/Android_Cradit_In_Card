@@ -69,14 +69,6 @@ public class ObjectCreator {
         // "license":"№ 2110177000478",
         // "apr":"24%"},
         String[] strings = in.replaceAll("\\{", "").split("\",\"");
-//        creditOrganization.setSite(strings[0].replaceAll("\"", "").split("site:")[1]);
-//        creditOrganization.setPhone(strings[1].replaceAll("\"", "").split(":")[1]);
-//
-//        creditOrganization.setEmail(strings[2].replaceAll("\"", "").split(":")[1]);
-//        creditOrganization.setAddress(strings[3].replaceAll("\"", "").split(":")[1]);
-//        creditOrganization.setLicense(strings[4].replaceAll("\"", "").split(":")[1]);
-//        creditOrganization.setApr(strings[5].replaceAll("\"", "")
-//                .replaceAll("\\}", "").split(":")[1]);
 
         for (int i = 0; i < strings.length; i++) {
             String s = strings[i].substring(1);
