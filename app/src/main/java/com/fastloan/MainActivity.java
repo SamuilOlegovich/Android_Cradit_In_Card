@@ -1,7 +1,10 @@
 package com.fastloan;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.telephony.TelephonyManager;
 import android.widget.ArrayAdapter;
@@ -39,13 +42,12 @@ public class MainActivity extends AppCompatActivity {
     private TabItem noCallsButton;
     private String networkCountry;
     private TabLayout tabLayout;
+    private String phoneNumber;
     private TabItem zeroButton;
     private ListView listView;
     private TabItem allButton;
     private int countryCode;
     private int list;
-
-
 
 
     @Override
@@ -68,17 +70,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     private void getStringDataApi() {
         Thread thread = new Thread(new DownloadStringDataApi());
         thread.start();
-        try { thread.join();
+        try {
+            thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-
 
 
     private void setStartList() {
@@ -90,17 +90,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void listeners() {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switchTabs(tab.getPosition());
             }
+
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) { }
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+
             @Override
-            public void onTabReselected(TabLayout.Tab tab) { }
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
         });
 
         infoImageButton.setOnClickListener(
@@ -117,22 +120,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void switchTabs(int in) {
         switch (in) {
-            case 0 :
+            case 0:
                 selectTabButton(creditOrganizationArrayList1);
                 list = 1;
                 break;
-            case 1 :
+            case 1:
                 selectTabButton(creditOrganizationArrayList2);
                 list = 2;
                 break;
-            case 2 :
+            case 2:
                 selectTabButton(creditOrganizationArrayList3);
                 list = 3;
                 break;
-            case 3 :
+            case 3:
                 selectTabButton(creditOrganizationArrayList4);
                 list = 4;
                 break;
@@ -189,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 creditOrganizationArrayList4.add(creditOrganization);
             }
         }
-        
+
         for (CreditOrganization creditOrganization : creditOrganizationArrayList) {
             if (creditOrganization.getAll().equalsIgnoreCase("true")) {
                 creditOrganizationArrayList1.add(creditOrganization);
@@ -211,14 +213,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void getInfoYouPhone() {
         // узнаем страну оператора
         // по буквам украина ua
         TelephonyManager tManager = (TelephonyManager) getBaseContext()
                 .getSystemService(Context.TELEPHONY_SERVICE);
+
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(TELEPHONY_SERVICE);
+        String devicIMEI = telephonyManager.getDeviceId();
+
         networkCountry = tManager.getNetworkCountryIso();
+        phoneNumber = (String) tManager.getLine1Number();
         DataExchange.setNetworkCountry(networkCountry);
+        DataExchange.setPhoneNumber(phoneNumber);
         // по цифрам 255
         Configuration config = getResources().getConfiguration();
         countryCode = config.mcc;

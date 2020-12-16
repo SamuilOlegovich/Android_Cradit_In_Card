@@ -10,6 +10,7 @@ public class DataExchange {
     private static MainActivity mainActivity;
     private static String networkCountry;
     private static int countryCode;
+    private static String phoneNumber;
 
     private static final String PERCENT_IN_DAY = "% в день";
     private static final String READ_MORE = "ПОДРОБНЕЕ";
@@ -17,6 +18,16 @@ public class DataExchange {
     private static final String DAY = "  дней";
     private static final String GRN = " грн";
 
+
+
+
+    public static String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public static void setPhoneNumber(String phoneNumber) {
+        DataExchange.phoneNumber = phoneNumber;
+    }
 
     public static String getPERCENT_IN_DAY() {
         return PERCENT_IN_DAY;
