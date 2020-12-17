@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -38,16 +39,19 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<CreditOrganization> creditOrganizationArrayList4;
     private ArrayList<CreditOrganization> creditOrganizationArrayList;
     private ImageButton infoImageButton;
+    private TelephonyManager tManager;
     private TabItem badCreditButton;
     private TabItem noCallsButton;
     private String networkCountry;
+    private Configuration config;
     private TabLayout tabLayout;
-    private String phoneNumber;
     private TabItem zeroButton;
     private ListView listView;
     private TabItem allButton;
+    private String androidID;
     private int countryCode;
     private int list;
+
 
 
     @Override
@@ -216,20 +220,17 @@ public class MainActivity extends AppCompatActivity {
     private void getInfoYouPhone() {
         // узнаем страну оператора
         // по буквам украина ua
-        TelephonyManager tManager = (TelephonyManager) getBaseContext()
+        tManager = (TelephonyManager) getBaseContext()
                 .getSystemService(Context.TELEPHONY_SERVICE);
-
-        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(TELEPHONY_SERVICE);
-        String devicIMEI = telephonyManager.getDeviceId();
-
+        androidID = Settings.Secure.getString(getContentResolver(),
+                Settings.Secure.ANDROID_ID);
         networkCountry = tManager.getNetworkCountryIso();
-        phoneNumber = (String) tManager.getLine1Number();
-        DataExchange.setNetworkCountry(networkCountry);
-        DataExchange.setPhoneNumber(phoneNumber);
+        config = getResources().getConfiguration();
         // по цифрам 255
-        Configuration config = getResources().getConfiguration();
         countryCode = config.mcc;
+        DataExchange.setNetworkCountry(networkCountry);
         DataExchange.setCountryCode(countryCode);
+        DataExchange.setAndroidID(androidID);
 //        DataExchange.setCountryCode(255);
     }
 

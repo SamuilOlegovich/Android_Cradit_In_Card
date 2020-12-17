@@ -9,8 +9,8 @@ public class DataExchange {
     private static CreditOrganization creditOrganization;
     private static MainActivity mainActivity;
     private static String networkCountry;
+    private static String androidID;
     private static int countryCode;
-    private static String phoneNumber;
 
     private static final String PERCENT_IN_DAY = "% в день";
     private static final String READ_MORE = "ПОДРОБНЕЕ";
@@ -21,12 +21,12 @@ public class DataExchange {
 
 
 
-    public static String getPhoneNumber() {
-        return phoneNumber;
+    public static String getAndroidID() {
+        return androidID;
     }
 
-    public static void setPhoneNumber(String phoneNumber) {
-        DataExchange.phoneNumber = phoneNumber;
+    public static void setAndroidID(String androidID) {
+        DataExchange.androidID = androidID;
     }
 
     public static String getPERCENT_IN_DAY() {

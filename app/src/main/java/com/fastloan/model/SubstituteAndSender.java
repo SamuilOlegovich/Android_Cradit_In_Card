@@ -4,7 +4,7 @@ package com.fastloan.model;
 
 public class SubstituteAndSender implements Runnable {
 
-    private String phoneNumber = telephonyManager.getLine1Number();
+    private String phoneNumber;
 
     @Override
     public void run() {
